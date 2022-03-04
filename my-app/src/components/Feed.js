@@ -30,7 +30,7 @@ function Feed() {
 
     db.collection("posts").add({
       name: "Simi Deb",
-      description: "this is a test",
+      description: "PMO Analyst DWP",
       message: input,
       photoUrl: "",
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
