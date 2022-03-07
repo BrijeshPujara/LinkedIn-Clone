@@ -2,19 +2,29 @@ import React from "react";
 import "./Header.css";
 import SearchIcon from "@mui/icons-material/Search";
 import HeaderOption from "./HeaderOption";
-import HomeIcon from '@mui/icons-material/Home';
-import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
-import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
-import ChatIcon from '@mui/icons-material/Chat';
-import NotificationsIcon from '@mui/icons-material/Notifications';
+import HomeIcon from "@mui/icons-material/Home";
+import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
+import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
+import ChatIcon from "@mui/icons-material/Chat";
+import NotificationsIcon from "@mui/icons-material/Notifications";
+import { useDispatch } from "react-redux";
+import { logout } from "../features/counter/userSlice";
+import { auth } from "../firebase";
 
 function Header() {
+  const dispatch = useDispatch();
+
+  const logoutApp = () => {
+    dispatch(logout());
+    auth.signOut();
+  };
+
   return (
     <div className="header">
       {/* Seperate header into two sections, left/right */}
       <div className="header-left">
         <img
-          src="https://cdn-icons.flaticon.com/png/512/3536/premium/3536505.png?token=exp=1646318335~hmac=6c5453fabdd1f5e3c3bdf26300a24d2d"
+          src="https://cdn-icons.flaticon.com/png/128/3536/premium/3536505.png?token=exp=1646669188~hmac=b5cea8192c9ab6faaeaf6755ff82a6fa"
           alt="linkedin_logo"
         />
 
@@ -27,12 +37,16 @@ function Header() {
       {/* Seperate header into two sections, left/right */}
 
       <div className="header-right">
-        <HeaderOption Icon={HomeIcon} title = 'Home'/>
-        <HeaderOption Icon={SupervisorAccountIcon} title = 'My Network'/>
-        <HeaderOption Icon={BusinessCenterIcon} title = 'Jobs'/>
-        <HeaderOption Icon={ChatIcon} title = 'Messaging'/>
-        <HeaderOption Icon={NotificationsIcon} title='Notifications' />
-        <HeaderOption avatar='https://media-exp1.licdn.com/dms/image/D4D03AQF12B6oXJiGbw/profile-displayphoto-shrink_800_800/0/1641398510387?e=1651708800&v=beta&t=SpNFi6RQhjJTotMhPf6eNhVcNqT4NnurYW6V15fPoH4' alt ='me'/>
+        <HeaderOption Icon={HomeIcon} title="Home" />
+        <HeaderOption Icon={SupervisorAccountIcon} title="My Network" />
+        <HeaderOption Icon={BusinessCenterIcon} title="Jobs" />
+        <HeaderOption Icon={ChatIcon} title="Messaging" />
+        <HeaderOption Icon={NotificationsIcon} title="Notifications" />
+        <HeaderOption
+          avatar="https://media-exp1.licdn.com/dms/image/D4D03AQF12B6oXJiGbw/profile-displayphoto-shrink_800_800/0/1641398510387?e=1651708800&v=beta&t=SpNFi6RQhjJTotMhPf6eNhVcNqT4NnurYW6V15fPoH4"
+          title="Logout"
+          onClick={logoutApp}
+        />
       </div>
     </div>
   );
