@@ -24,7 +24,7 @@ function Header() {
       {/* Seperate header into two sections, left/right */}
       <div className="header-left">
         <img
-          src="https://cdn-icons.flaticon.com/png/128/3536/premium/3536505.png?token=exp=1646669188~hmac=b5cea8192c9ab6faaeaf6755ff82a6fa"
+          src="https://img.icons8.com/color/344/linkedin.png"
           alt="linkedin_logo"
         />
 
@@ -44,8 +44,8 @@ function Header() {
         <HeaderOption Icon={NotificationsIcon} title="Notifications" />
         <HeaderOption
           avatar="https://media-exp1.licdn.com/dms/image/D4D03AQF12B6oXJiGbw/profile-displayphoto-shrink_800_800/0/1641398510387?e=1651708800&v=beta&t=SpNFi6RQhjJTotMhPf6eNhVcNqT4NnurYW6V15fPoH4"
-          title="Logout"
-          onClick={logoutApp}
+          title="Me"
+         onClick={logoutApp}
         />
       </div>
     </div>

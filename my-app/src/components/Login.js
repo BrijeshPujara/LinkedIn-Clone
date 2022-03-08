@@ -13,20 +13,25 @@ function Login() {
   const [profilePic, setProfilePic] = useState("");
   const dispatch = useDispatch();
 
-  const loginToApp = (e) => {
-    e.preventDefault();
+  // const loginToApp = (e) => {
+  //   e.preventDefault();
 
-    auth.signInWithEmailAndPassword(email, password).then((userAuth) => {
-      dispatch(
-        login({
-          email: userAuth.user.email,
-          uid: userAuth.user.uid,
-          displayName: userAuth.user.displayName,
-          profileUrl: userAuth.user.photoURL,
-        })
-      );
-    }).catch ((error) => alert (error));
-  };
+  //   auth
+  //     .signInWithEmailAndPassword(email, password)
+  //     .then((userAuth) => {
+  //       dispatch(
+  //         login({
+  //           email: userAuth.user.email,
+  //           uid: userAuth.user.uid,
+  //           displayName: userAuth.user.displayName,
+  //           profileUrl: userAuth.user.photoURL,
+  //         })
+  //       );
+  //     })
+  //     .catch((error) => alert(error));
+
+  // };
+
   const register = () => {
     if (!name) {
       return alert("Please enter a full name!");
@@ -89,9 +94,7 @@ function Login() {
           type="password"
         />
 
-        <button type="submit" onClick={loginToApp}>
-          Sign In
-        </button>
+        <button type="submit" /*onClick={loginToApp}*/>Sign In</button>
       </form>
       <p>Not a member?</p>
       <span className="login-register" onClick={register}>
