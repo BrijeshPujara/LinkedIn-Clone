@@ -3,7 +3,7 @@ React JS LinkedIn clone tutorial using Firebase, Redux and Material UI. - Featur
 
 ## Lessons Learned 
 An exciting dive into React Redux, encountered a number problems that I had to overcome to integrate firebase as this was my first time using firebase as a backend.
-Getting familiar with Redux devtools. Overall an interesting project with many lessons learned.
+Getting familiar with Redux devtools. Overall an interesting project with many lessons learned. A key to the clone tutorials is mainly to introduce pattern recognition with React. 
 
 ## Future Improvements
 * Integrating an API key to pull live data for the linkedin news section, I think this would be a great feature to add and it's something I'll look at in the future.
